@@ -32,8 +32,7 @@ async def on_message(message):
         server = discord.utils.get(message.server.categories, id="493940910493532161")
         await client.create_channel(server, "teste")
         await client.send_message(message.channel, "canal criado em {}".format(server.name))
-
-
+        return
 
     if message.content.lower().startswith("!criarticket"):
             cargos = [
