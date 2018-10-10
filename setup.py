@@ -28,12 +28,6 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.content.lower().startswith("!criarc"):
-        server = discord.utils.get(message.server.categories, id="493940910493532161")
-        await client.create_channel(server, "teste")
-        await client.send_message(message.channel, "canal criado em {}".format(server.name))
-        return
-
     if message.content.lower().startswith("!criarticket"):
             cargos = [
                 # IDs dos cargos:
