@@ -31,8 +31,7 @@ async def on_message(message):
     if message.content.lower().startswith("!criarticket"):
             cargos = [
                 # IDs dos cargos:
-                "493935322216923136", #DONo
-                "494216974688190469", #A
+                "493935322216923136"
             ]
             for r in message.author.roles:
                 if r.id in cargos:
@@ -58,9 +57,6 @@ async def on_message(message):
 
                     global msg_id
                     msg_id = react.id
-
-                    global msg_user
-                    msg_user = message.author
 
 @client.event
 async def on_reaction_add(reaction, user):
