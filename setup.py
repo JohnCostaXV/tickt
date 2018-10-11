@@ -32,7 +32,8 @@ async def on_message(message):
         cargos = [
                 # IDs dos cargos:
                 "493935322216923136", #DONO
-                "494216272930799618"
+                "494216272930799618",
+                "494216974688190469"
         ]
         for r in message.author.roles:
             if r.id in cargos:
@@ -42,7 +43,8 @@ async def on_message(message):
     if message.content.lower().startswith("!criarticket"):
             cargos = [
                 # IDs dos cargos:
-                "493935322216923136"
+                "493935322216923136",
+                "494216974688190469"
             ]
             for r in message.author.roles:
                 if r.id in cargos:
