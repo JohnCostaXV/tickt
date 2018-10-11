@@ -69,13 +69,12 @@ async def on_reaction_add(reaction, user):
     if reaction.emoji == "💎" and msg.id == msg_id: #and user == msg_user:
      for role in user.roles:
          if role.name == "👥 Registrado":
-             canal = discord.utils.get(msg.guild.categories, id="493940910493532161")
              cargo = discord.utils.get(msg.server.roles, name="🔔 Suporte")
              everyone_perms = discord.PermissionOverwrite(read_messages=False)
              my_perms = discord.PermissionOverwrite(read_messages=True)
              everyone = discord.ChannelPermissions(target=msg.server.default_role, overwrite=everyone_perms)
              mine = discord.ChannelPermissions(target=user, overwrite=my_perms)
-             ch = await client.create_channel(canal, "suporte-{}".format(user.name), everyone, mine)
+             ch = await client.create_channel(msg.server, "suporte-{}".format(user.name), everyone, mine)
              await client.edit_channel_permissions(ch, cargo, my_perms)
              await client.remove_reaction(msg, "💎", user)
              embed = discord.Embed(title="`Tópico de COMPRAS`", color=VERM, description="Novo tópico!\nCriado por: {}".format(user.mention))
@@ -88,14 +87,13 @@ async def on_reaction_add(reaction, user):
     if reaction.emoji == "📋" and msg.id == msg_id: #and user == msg_user:
      for role in user.roles:
          if role.name == "👥 Registrado":
-             canal = discord.utils.get(msg.guild.categories, id="493940910493532161")
              cargo = discord.utils.get(msg.server.roles, name="🔔 Suporte")
              everyone_perms = discord.PermissionOverwrite(read_messages=False)
              my_perms = discord.PermissionOverwrite(read_messages=True)
 
              everyone = discord.ChannelPermissions(target=msg.server.default_role, overwrite=everyone_perms)
              mine = discord.ChannelPermissions(target=user, overwrite=my_perms)   
-             ch = await client.create_channel(canal, "suporte-{}".format(user.name), everyone, mine)
+             ch = await client.create_channel(msg.server, "suporte-{}".format(user.name), everyone, mine)
              await client.edit_channel_permissions(ch, cargo, my_perms)
              await client.remove_reaction(msg, "📋", user)
              embed = discord.Embed(title="`Tópico de MIGRAÇÃO`", color=VERM, description="Novo tópico!\nCriado por: {}".format(user.mention))
@@ -108,14 +106,13 @@ async def on_reaction_add(reaction, user):
     if reaction.emoji == "💸" and msg.id == msg_id: #and user == msg_user:
      for role in user.roles:
          if role.name == "👥 Registrado":
-             canal = discord.utils.get(msg.guild.categories, id="493940910493532161")
              cargo = discord.utils.get(msg.server.roles, name="🔔 Suporte")
              everyone_perms = discord.PermissionOverwrite(read_messages=False)
              my_perms = discord.PermissionOverwrite(read_messages=True)
 
              everyone = discord.ChannelPermissions(target=msg.server.default_role, overwrite=everyone_perms)
              mine = discord.ChannelPermissions(target=user, overwrite=my_perms)   
-             ch = await client.create_channel(canal, "suporte-{}".format(user.name), everyone, mine)
+             ch = await client.create_channel(msg.server, "suporte-{}".format(user.name), everyone, mine)
              await client.edit_channel_permissions(ch, cargo, my_perms)
              await client.remove_reaction(msg, "📋", user)
              embed = discord.Embed(title="`Tópico de TAG-CLIENTE`", color=VERM, description="Novo tópico!\nCriado por: {}".format(user.mention))
@@ -129,14 +126,13 @@ async def on_reaction_add(reaction, user):
      for role in user.roles:
          if role.name == "👥 Registrado":
              cargo = discord.utils.get(msg.server.roles, name="🔔 Suporte")
-             canal = discord.utils.get(msg.guild.categories, id="493940910493532161")
              everyone_perms = discord.PermissionOverwrite(read_messages=False)
              my_perms = discord.PermissionOverwrite(read_messages=True, send_messages=True)
 
              everyone = discord.ChannelPermissions(target=msg.server.default_role, overwrite=everyone_perms)
              mine = discord.ChannelPermissions(target=user, overwrite=my_perms)
 
-             ch = await client.create_channel(canal, "suporte-{}".format(user.name), everyone, mine)
+             ch = await client.create_channel(msg.server, "suporte-{}".format(user.name), everyone, mine)
              await client.edit_channel_permissions(ch, cargo, my_perms)
              await client.remove_reaction(msg, "🎳", user)
              embed = discord.Embed(title="`Tópico de OUTROS`", color=VERM, description="Novo tópico!\nCriado por: {}".format(user.mention))
