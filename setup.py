@@ -28,6 +28,17 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.content.lower().startswith("!fechar"):
+        cargos = [
+                # IDs dos cargos:
+                "493935322216923136", #DONO
+                "494216272930799618"
+        ]
+        for r in message.author.roles:
+            if r.id in cargos:
+                await client.delete_channel(message.channel)
+
+
     if message.content.lower().startswith("!criarticket"):
             cargos = [
                 # IDs dos cargos:
